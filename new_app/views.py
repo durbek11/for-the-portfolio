@@ -9,3 +9,6 @@ def contact(request):
 
 def single(request):
     return render(request, 'includes/single.html')
+
+def category(request):
+    return render(request, 'includes/category.html')
