@@ -25,21 +25,3 @@ class UpdateUserForm(forms.ModelForm):
         }
 
 
-class UpdateProfileForm(forms.ModelForm):
-    class Meta:
-        model = Profile
-        fields = ['image', 'bio', 'card_number', 'address', 'mobile_number']
-        # fields = '__all__'
-
-
-
-class ContactForm(forms.ModelForm):
-    class Meta:
-        model = Contact
-        fields = ['full_name', "email", 'choices', "mobile", "message"]
-
-
-class CommentForm(forms.ModelForm):
-    class Meta:
-        model = Comment
-        fields = ('authour',  'message', "rate_product")

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import *
+from .form import *
 
 def home(request):
     return render(request, 'includes/index.html')

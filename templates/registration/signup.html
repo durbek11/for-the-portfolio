@@ -1,6 +1,8 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
+    {% block content %}
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -62,10 +64,6 @@
                       <div class="d-flex justify-content-center">
                           <button type="submit" class="btn btn-outline-primary w-100">Create Account</button>
                       </div>
-
-                      <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="{% url 'furn:login' %}"
-                          class="fw-bold text-body"><u>Login here</u></a></p>
-
                     </form>
 
                   </div>
@@ -91,6 +89,7 @@
             } 
         })
 </script>
+{% endblock content %}
 </body>
 
 </html>
