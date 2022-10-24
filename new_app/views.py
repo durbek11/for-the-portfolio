@@ -20,6 +20,6 @@ def signup(request):
         form = Registration(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('//')
+            return redirect('/Login/')
     
     return render(request, 'registration/signup.html', {"form":form})
