@@ -23,5 +23,3 @@ class UpdateUserForm(forms.ModelForm):
             'last_name': forms.TextInput(attrs={"class": "form-control", "placeholder": "Last Name", "id": "lastname"}),
             'email': forms.EmailInput(attrs={"class": 'form-control w-75', "placeholder": "Email", "id": "email"})
         }
-
-
