@@ -52,8 +52,13 @@
                     </div>
                 </div>
                 <a href="{% url 'NEWSROOM:contact' %}" class="nav-item nav-link">Contact</a>
+                {% if not request.user.is_authenticated %}
                 <a href="{% url 'NEWSROOM:signup' %}" class="nav-item nav-link">Sign up</a>
                 <a href="{% url 'NEWSROOM:Login' %}" class="nav-item nav-link">Login</a>
+                {% endif %}
+                {% if request.user.is_authenticated %}
+                <li><a href="{% url 'NEWSROOM:logout' %}">logout</a></li>
+                {% endif %}
             </div>
             <div class="input-group ml-auto" style="width: 100%; max-width: 300px;">
                 <input type="text" class="form-control" placeholder="Keyword">

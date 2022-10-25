@@ -10,5 +10,6 @@ urlpatterns = [
     path('single/', single, name='single'),
     path('category/', category, name='category'),
     path('Login/', LoginView.as_view(), name='Login'),
-    path('signup/', signup, name='signup')
+    path('signup/', signup, name='signup'),
+       path('logout/', LogoutView.as_view(), name="logout"),
 ]
