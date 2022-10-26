@@ -3,8 +3,13 @@ from .models import *
 from .form import *
 
 def home(request):
-    return render(request, 'includes/index.html')
+    date = Date.objects.all()
 
+    context = {
+        "date": date, 
+    }
+    return render(request, 'includes/index.html', context)
+    
 def contact(request):
     return render(request, 'includes/contact.html')
 
@@ -23,3 +28,6 @@ def signup(request):
             return redirect('/Login/')
     
     return render(request, 'registration/signup.html', {"form":form})
+
+
+

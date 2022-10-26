@@ -13,3 +13,9 @@ class MyUser(AbstractUser):
     REQUIRED_FIELDS = []
     is_organiser = models.BooleanField(default=False)
     is_agent = models.BooleanField(default=False)
+
+class Date(models.Model):
+    date1 = models.TextField(max_length=70)
+
+    def __str__(self):
+        return self.date1
