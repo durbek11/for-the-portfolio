@@ -3,10 +3,9 @@ from .models import *
 from .form import *
 
 def home(request):
-    date = Date.objects.all()
-
     context = {
         "date": date, 
+         "products":products,
     }
     return render(request, 'includes/index.html', context)
     
