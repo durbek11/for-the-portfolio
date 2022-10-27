@@ -9,7 +9,6 @@ def home(request):
 
     context = {
         "date": date, 
-         "products":products,
     }
     return render(request, 'includes/index.html', context)
     
