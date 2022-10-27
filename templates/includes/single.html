@@ -152,6 +152,37 @@
                             </div>
                         </form>
                     </div>
+
+
+
+                    <div class="comment">
+                        {% for comment in comments %}
+                        <div class="comments" style="padding: 10px;">
+                            <h3 class="font-weight-bold">
+                                {{ comment.authour.first_name }}: {{ comment.message }} {{ comment.rate_product }}
+                            </h3>
+                        </div>
+                        {% endfor %}
+                        {% if not comments %}
+                        <h1>No comments yet</h1>
+                        {% endif %}
+                    </div>
+                    <div class="box">
+                        <a class="fa-solid fa-arrow-left" href="/#product"></a>
+                        <div>
+                            <img src="{{ which_one.img.url }}" height="500">
+                            <h1>{{ which_one.title }}</h1>
+                        </div>
+                        {% if  request.user.is_authenticated %}
+                        <form method="post" class="d-flex mt-4">
+                            {% csrf_token %}
+                            {% load widget_tweaks %}
+                            {{ comment_form.authour }}
+                            {{ comment_form.rate_product }}
+                            {% render_field comment_form.message type="text" class="form-control" placeholder="Leave comment" %}
+                            <button type="submit" class="btn btn-info">Send</button>
+                        </form>
+                        {% endif %}
                     <!-- Comment Form End -->
                 </div>
 
