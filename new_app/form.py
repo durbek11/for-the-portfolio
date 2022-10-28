@@ -1,3 +1,4 @@
+from .models import Comment
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UsernameField
 from django.contrib.auth import get_user_model
@@ -7,6 +8,13 @@ from .models import *
 User = get_user_model()
 
 
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ('name', 'email', 'body')
+
+
 class Registration(UserCreationForm):
     class Meta:
         model = User
@@ -14,18 +22,3 @@ class Registration(UserCreationForm):
 
 
 
-class UpdateUserForm(forms.ModelForm):
-    class Meta:
-        model = User
-        fields = ['first_name', 'last_name', "email"]
-        widgets = {
-            'first_name': forms.TextInput(attrs={"class": "form-control", "placeholder": "First Name", "id": "firstname"}),
-            'last_name': forms.TextInput(attrs={"class": "form-control", "placeholder": "Last Name", "id": "lastname"}),
-            'email': forms.EmailInput(attrs={"class": 'form-control w-75', "placeholder": "Email", "id": "email"})
-        }
-
-
-class CommentForm(forms.ModelForm):
-    class Meta:
-        model = Comment
-        fields = ('authour',  'message', "rate_product")

@@ -17,7 +17,7 @@ def contact(request):
 
 def single(request):
     
-    return render(request, "includes/single.html", context)
+    return render(request, "includes/single.html")
    
 
     
