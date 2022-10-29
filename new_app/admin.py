@@ -1,6 +1,5 @@
 from django.contrib import admin
 from .models import *
-from .models import Post, Comment
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
     list_display = ('name', 'body', 'post', 'created_on', 'active')
@@ -13,5 +12,4 @@ class CommentAdmin(admin.ModelAdmin):
         
 admin.site.register(MyUser)
 admin.site.register(Date)
-admin.site.register(Product)
 admin.site.register(Comment)
