@@ -2,6 +2,8 @@ from django.urls import path
 from django.contrib.auth.views import LoginView , LogoutView
 from .views import *
 
+from rest_framework import views
+
 app_name = 'NEWSROOM'
 
 urlpatterns = [
@@ -12,5 +14,5 @@ urlpatterns = [
     path('Login/', LoginView.as_view(), name='Login'),
     path('signup/', signup, name='signup'),
     path('logout/', LogoutView.as_view(), name="logout"),
-    path('<slug:slug>/', views.post_detail, name='post_detail')
+    path('help/<slug:slug>/', views.post_detail, name='post_detail')
 ]
