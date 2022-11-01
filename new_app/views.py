@@ -6,7 +6,7 @@ from rest_framework import views
 
 
 
-def post_detail(request, slug):
+def post_detail(request, pk):
     template_name = 'post_detail.html'
     post = get_object_or_404(Post, slug=slug)
     comments = post.comments.filter(active=True)
