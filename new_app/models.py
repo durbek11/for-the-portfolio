@@ -36,6 +36,19 @@ class Contact(models.Model):
     def __str__(self):
         return self.choices
 
+class Arrival(models.Model):
+    arrivals_img = models.ImageField()
+    arrivals_title = models.CharField(max_length=200)
+    arrivals_price = models.IntegerField(default=10)
+    category = models.ForeignKey("Category",blank=True, on_delete=models.CASCADE)
+
+    #asosiy ma`lumotlar uchun
+    arrivals_size  = models.CharField(max_length=30)
+    arrivals_text = models.TextField(max_length=700)
+    
+    def __str__(self):
+        return self.arrivals_title
+
 class Category(models.Model):
     class Meta:
         verbose_name = 'My Category'
