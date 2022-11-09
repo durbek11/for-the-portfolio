@@ -35,4 +35,14 @@ class Contact(models.Model):
     date = models.DateTimeField(auto_now=add)
     def __str__(self):
         return self.choices
+
+class Category(models.Model):
+    class Meta:
+        verbose_name = 'My Category'
+        verbose_name_plural = 'My Categorys bob'
+        
+    category_name = models.CharField(max_length=100)
+    
+    def __str__(self):
+        return self.category_name
     
