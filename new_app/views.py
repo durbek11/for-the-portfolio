@@ -20,6 +20,7 @@ def home(request):
 
    context = {
         "date": date,
+        "arrivals":arrivals, 
         "categoryes":categires, 
     }
    return render(request, 'includes/index.html', context)

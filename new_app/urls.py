@@ -14,4 +14,5 @@ urlpatterns = [
     path('Login/', LoginView.as_view(), name='Login'),
     path('signup/', signup, name='signup'),
     path('logout/', LogoutView.as_view(), name="logout"),
+    path("<int:pk>/detalis/", arrivals_detail, name="arrivals_detal"),
 ]
