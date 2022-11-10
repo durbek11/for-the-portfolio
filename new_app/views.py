@@ -40,6 +40,9 @@ def contact(request):
 def single(request):
     
     return render(request, "includes/single.html")
+
+def cat(request):
+    return render(request, "includes/cat.html")
    
 
     

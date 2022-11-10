@@ -16,9 +16,9 @@
     <div class="container">
         <div class="section-header">
             <h2>{% trans "yangi kelganlar" %}</h2>
-            <a class="links" href="{% url 'furn:home' %}#new-arrivals">{% trans "hammasi" %}</a>
+            <a class="links" href="{% url 'NEWSROOM:home' %}#new-arrivals">{% trans "hammasi" %}</a>
             {% for category in categoryes %}
-            <a class="links" href="{% url 'furn:home' %}?category={{ category.category_name }}#new-arrivals">{{ category.category_name }}</a>
+            <a class="links" href="{% url 'NEWSROOM:home' %}?category={{ category.category_name }}#new-arrivals">{{ category.category_name }}</a>
             {% endfor %}
         </div>
         <!--/.section-header-->
@@ -40,8 +40,8 @@
                                     <span class="lnr lnr-frame-expand"></span>
                                 </p>
                             </div>
-                        </div>
-                        <h4><a href="{% url 'furn:arrivals_detal' y.pk %}">{{ y.arrivals_title }}</a></h4>
+                        </div>4y43y34uy
+                        <a href="{% url 'NEWSROOM:arrivals_detal' y.pk %}" class="nav-item nav-link active">Categh4h4h4h4h4h4h44orieweewfres</a>
                         <p class="arrival-product-price">${{ y.arrivals_price }}</p>
                     </div>
                 </div>
@@ -49,6 +49,7 @@
             </div>
         </div>
     </div>
+    
     <!--/.container-->
 
 </section>
