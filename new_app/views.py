@@ -24,6 +24,15 @@ def home(request):
         "categoryes":categires, 
     }
    return render(request, 'includes/index.html', context)
+
+def arrivals_detail(request, pk):
+    arrivals_detalis = Arrival.objects.get(id=pk)
+
+    context ={
+        "arrivals_detalis":arrivals_detalis
+    }
+
+    return render(request, "detalis/arrivals_detalis.html", context)
     
 def contact(request):
     return render(request, 'includes/contact.html')
