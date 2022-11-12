@@ -1,7 +1,12 @@
-{% load i18n %}
 {% load static %}
 
 <style>
+    section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
     .links{
         border: 1px solid aqua !important;
         text-decoration: none !important;
@@ -15,10 +20,10 @@
 <section id="new-arrivals" class="new-arrivals">
     <div class="container">
         <div class="section-header">
-            <h2>{% trans "yangi kelganlar" %}</h2>
-            <a class="links" href="{% url 'NEWSROOM:home' %}#new-arrivals">{% trans "hammasi" %}</a>
+            <h2>yangi kelganlar</h2>
+            <a class="links" href="#">hammasi</a>
             {% for category in categoryes %}
-            <a class="links" href="{% url 'NEWSROOM:home' %}?category={{ category.category_name }}#new-arrivals">{{ category.category_name }}</a>
+            <a class="links" href="{% url 'NEWSROOM:home' %}?category={{ category.category_name }}#">{{ category.category_name }}</a>
             {% endfor %}
         </div>
         <!--/.section-header-->
@@ -33,7 +38,7 @@
                             <div class="new-arrival-cart">
                                 <p>
                                     <span class="lnr lnr-cart"></span>
-                                    <a href="#">{% trans "karta qoshish" %}</a>
+                                    <a href="#">karta qoshish</a>
                                 </p>
                                 <p class="arrival-review pull-right">
                                     <span class="lnr lnr-heart"></span>
