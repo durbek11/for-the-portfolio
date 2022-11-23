@@ -23,12 +23,19 @@
             <h2>yangi kelganlar</h2>
             <a class="links" href="#">hammasi</a>
             {% for category in categoryes %}
-            <a class="links" href="{% url 'NEWSROOM:home' %}?category={{ category.category_name }}#">{{ category.category_name }}</a>
+            <a class="links" href="{% url 'NEWSROOM:cat' %}?category={{ category.category_name }}">{{ category.category_name }}</a>
             {% endfor %}
         </div>
         <!--/.section-header-->
         <div class="new-arrivals-content">
             <div class="row">
+               {% if y %}
+                 <h1>chiqdi</h1>
+               {% else %}
+                 <h1>chiqmadi</h1>
+
+                {% endif %}
+
                 {% for y in arrivals %}
                 <div class="col-md-3 col-sm-4">
                     <div class="single-new-arrival">

@@ -37,36 +37,11 @@ def cat(request):
         arrivals = Arrival.objects.all()
     else:
         arrivals = Arrival.objects.filter(category__category_name=category)
-
-
-    if 'product' in request.GET:
-        search = request.GET['product']
-        full_search = Q(Q(title__icontains=search) | Q(Q(price__icontains=search)))
-        products = Product.objects.filter(full_search)
-    else:
-        products = Product.objects.all()
     
-    
-    if request.method  == "POST":
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            form.save()
-        return  redirect('furn:succses')
-    else:
-        form = ContactForm()
-
-    
-   
-    base = Carousel.objects.all()
-    blog = Blog.objects.all()
     categires = Category.objects.all()
     context = {
-        "base": base, 
-        "arrivals":arrivals, 
-        "blog":blog,
-        "products":products,
+        "arrivals":arrivals,
         "categoryes":categires,
-        "form":form
     }
     return render(request, "includes/cat.html")
    
