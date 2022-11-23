@@ -42,6 +42,16 @@ def single(request):
     return render(request, "includes/single.html")
 
 def cat(request):
+    category = request.GET.get('category')
+    if category == None:
+        arrivals = Arrival.objects.all()
+    else:
+        arrivals = Arrival.objects.filter(category__category_name=category)
+    categires = Category.objects.all()
+
+    context = {
+        "arrivals":arrivals, 
+    }
     return render(request, "includes/cat.html")
    
 
