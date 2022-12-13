@@ -43,7 +43,7 @@ def cat(request):
         "arrivals":arrivals,
         "categoryes":categires,
     }
-    return render(request, "includes/cat.html")
+    return render(request, "includes/cat.html", context)
    
 
     
