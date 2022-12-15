@@ -52,7 +52,7 @@ class Arrival(models.Model):
 class Category(models.Model):
     class Meta:
         verbose_name = 'My Category'
-        verbose_name_plural = 'My Categorys bob'
+        verbose_name_plural = 'My Categorys'
         
     category_name = models.CharField(max_length=100)
     

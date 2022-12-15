@@ -33,7 +33,7 @@
                 <div class="col-md-3 col-sm-4">
                     <div class="single-new-arrival">
                         <div class="single-new-arrival-bg">
-                            <img src="{% static 'media/news-100x100-5.jpg' %}" alt="new-arrivals images">
+                            <img class="images" src="{% static 'media/news-100x100-5.jpg' %}" alt="new-arrivals images">
                             <div class="single-new-arrival-bg-overlay"></div>
                             <div class="new-arrival-cart">
                                 <p>
@@ -46,7 +46,7 @@
                                 </p>
                             </div>
                         </div>
-                        <h4><a href="{% url 'NEWSROOM:arrivals_detal' y.pk %}">{{ y.arrivals_title }}</a></h4>
+                        <h4 class="category"><a href="{% url 'NEWSROOM:arrivals_detal' y.pk %}">{{ y.arrivals_title }}</a></h4>
                         <p class="arrival-product-price">${{ y.arrivals_price }}</p>
                     </div>
                 </div>
@@ -54,6 +54,21 @@
             </div>
         </div>
     </div>
+    <style>
+        .new-arrival-cart a {
+            color:black;
+            text-decoration: none;
+        }
+        .category a {
+            color: black;
+            text-decoration: none;
+        }
+        .images {
+            margin-top: 100px;
+            width: 300px;
+            height: 300px;
+        }
+    </style>
     
     <!--/.container-->
 
