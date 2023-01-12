@@ -1,29 +1,13 @@
 {% load static %}
 
-<style>
-    section {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-    }
-    .links{
-        border: 1px solid aqua !important;
-        text-decoration: none !important;
-        display: inline-block !important;
-        padding: 10px 15px !important;
-        margin-top: 10px;
-        margin-left: 20px;
-    }
-</style>
-
 <section id="new-arrivals" class="new-arrivals">
     <div class="container">
         <div class="section-header">
             <h2>yangi kelganlar</h2>
             <a class="links" href="#">hammasi</a>
             {% for category in categoryes %}
-            <a class="links" href="{% url 'NEWSROOM:cat' %}?category={{ category.category_name }}">{{ category.category_name }}</a>
+            <a class="links" href="{% url 'NEWSROOM:cat' %}?category={{ category.category_name }}">{{
+                category.category_name }}</a>
             {% endfor %}
         </div>
         <!--/.section-header-->
@@ -46,7 +30,8 @@
                                 </p>
                             </div>
                         </div>
-                        <h4 class="category"><a href="{% url 'NEWSROOM:arrivals_detal' y.pk %}">{{ y.arrivals_title }}</a></h4>
+                        <h4 class="category"><a href="{% url 'NEWSROOM:arrivals_detal' y.pk %}">category: {{ y.arrivals_title
+                                }}</a></h4>
                         <p class="arrival-product-price">${{ y.arrivals_price }}</p>
                     </div>
                 </div>
@@ -56,20 +41,38 @@
     </div>
     <style>
         .new-arrival-cart a {
-            color:black;
+            color: black;
             text-decoration: none;
         }
+
         .category a {
             color: black;
             text-decoration: none;
         }
+
         .images {
             margin-top: 100px;
             width: 300px;
             height: 300px;
         }
+
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .links {
+            border: 1px solid aqua !important;
+            text-decoration: none !important;
+            display: inline-block !important;
+            padding: 10px 15px !important;
+            margin-top: 10px;
+            margin-left: 20px;
+        }
     </style>
-    
+
     <!--/.container-->
 
 </section>
