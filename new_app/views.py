@@ -22,7 +22,7 @@ def arrivals_detail(request, pk):
         "arrivals_detalis":arrivals_detalis
     }
 
-    return render(request, "detalis/my-category.html", context)
+    return render(request, "includes/cat.html", context)
     
 def contact(request):
     return render(request, 'includes/contact.html')
