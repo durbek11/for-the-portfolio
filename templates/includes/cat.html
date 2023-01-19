@@ -1,10 +1,12 @@
+{% extends "layouts/base.html" %}
 {% load static %}
+{% block content %}
 
 <section id="new-arrivals" class="new-arrivals">
     <div class="container">
         <div class="section-header">
             <h2>yangi kelganlar</h2>
-            <a class="links" href="#">hammasi</a>
+            <a href="{% url 'NEWSROOM:home' %}" class="links">Hammasi</a>
             {% for category in categoryes %}
             <a class="links" href="{% url 'NEWSROOM:cat' %}?category={{ category.category_name }}">{{
                 category.category_name }}</a>
@@ -76,3 +78,4 @@
     <!--/.container-->
 
 </section>
+{% endblock content %}
